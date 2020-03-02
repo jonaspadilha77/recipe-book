@@ -10,8 +10,9 @@ export class IngredientComponent implements OnInit {
 
   @Input() ingredientList: Ingredient[];
   @Output() itemClicked = new EventEmitter<Ingredient>();
+  @Input() filtered: string;
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   registerOnClick(ingredient: Ingredient) {
     this.itemClicked.emit(ingredient);

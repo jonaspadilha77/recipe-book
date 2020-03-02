@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { IngredientTypeDirective } from './directives/ingredient-type.directive';
 import { CartComponent } from './cart/cart.component';
 import { SharedModule } from './shared/shared.module';
+import { BoughtIngredientsPipe } from './pipes/bought-ingredients.pipe';
+
 
 @NgModule({
   declarations: [
@@ -52,13 +55,15 @@ import { SharedModule } from './shared/shared.module';
     FilterPipe,
     IngredientTypeDirective,
     CartComponent,
+    BoughtIngredientsPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AppBootstrapModule,
-    SharedModule.forRoot()
+    SharedModule.forRoot(),
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

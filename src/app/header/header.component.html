@@ -1,17 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Recipes Book</a>
-    <button (click)="collapsed = !collapsed" class="navbar-toggler">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active" [class.active]="setActiveLink('recipes')">
-          <a class="nav-link" href="#" (click)="onChangeLink('recipes')">Recipes </a>
-        </li>
-        <li class="nav-item" [class.active]="setActiveLink('shopping-list')" >
-            <a class="nav-link" href="#" (click)="onChangeLink('shopping-list')">Shopping list</a>
-          </li>
-      </ul>
-    </div>
-  </nav>
+  <a class="navbar-brand" href="#">Recipes Book</a>
+  <button (click)="collapsed = !collapsed" class="navbar-toggler">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true"
+    id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" [class.active]="setActiveLink('recipes')">
+        <a class="nav-link" href="#" (click)="onChangeLink('recipes')">Recipes </a>
+      </li>
+      <li class="nav-item" [class.active]="setActiveLink('shopping-list')">
+        <a class="nav-link" href="#" (click)="onChangeLink('shopping-list')">Shopping list</a>
+      </li>
+    </ul>
+  </div>
+</nav>

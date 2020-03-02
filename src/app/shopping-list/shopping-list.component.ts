@@ -12,6 +12,7 @@ import { CartService } from '../cart/cart.service';
 export class ShoppingListComponent implements OnInit {
 
   ingredientList: Ingredient[];
+  filtered: string;
 
   constructor(private cartService: CartService) { }
 

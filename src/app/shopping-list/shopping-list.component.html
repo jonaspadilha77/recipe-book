@@ -13,7 +13,7 @@
 </div>
 <div class="container px-lg-5">
     <div class="row mx-lg-n5">
-       <app-ingredient [ingredientList]="ingredientList" (itemClicked)="sendToCart($event)"></app-ingredient>
+       <app-ingredient [ingredientList]="ingredientList" [filtered]="filtered" (itemClicked)="sendToCart($event)"></app-ingredient>
         <app-cart></app-cart>
     </div>
 </div>

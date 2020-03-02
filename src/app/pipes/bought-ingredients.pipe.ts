@@ -5,9 +5,9 @@ import { Ingredient } from '../ingredients/ingredient.model';
     name: 'boughtIngredients'
 })
 
-export class PriceNumberPipe implements PipeTransform {
+export class BoughtIngredientsPipe implements PipeTransform {
     transform(ingredients: Ingredient[]): Ingredient[] {
         return ingredients.filter((ingredient: Ingredient) => ingredient.bought);
-    }
+}
 }
 
