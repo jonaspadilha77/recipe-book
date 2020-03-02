@@ -1,0 +1,11 @@
+<div class="dropdown">
+    <button (click)="onToggle()"class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      {{title}}
+    </button>
+    <div *appUnless="!isOpened" class="dropdown-menu show" aria-labelledby="dropdownMenuButton" >
+      <a class="dropdown-item" (click)="onToggle()" href="#" *ngFor="let option of options">
+          {{ option.name }}
+      </a>
+    </div>
+  </div>

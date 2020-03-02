@@ -1,0 +1,15 @@
+
+       <ul class="list-group col py-3 px-lg-5">
+           <li class="list-group-item d-inline-flex " *ngFor="let ingredient of currentList; index as id">
+            <span class="flex-grow-1 ">
+                {{ ingredient.name }}
+               </span>
+               <span class="mr-4">
+                   {{ ingredient.amount | PriceNumber }}
+               </span>
+               <span class="p-1 mr-2" [appIngredientType]="ingredient.type">
+                {{ ingredient.type }}
+                </span>
+                <span class="btn btn-danger mr-2" (click)="removeFromCart(id)">Remove</span>
+           </li>
+       </ul>
