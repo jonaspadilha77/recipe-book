@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Recipes Book</a>
-  <button (click)="collapsed = !collapsed" class="navbar-toggler">
+  <a class="navbar-brand" href="#" (click)="onChangeLink('recipes')">Recipes Book</a>
+  <button (click)="collapsed = !collapsed" class="navbar-toggler" >
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true"
@@ -13,5 +13,15 @@
         <a class="nav-link" href="#" (click)="onChangeLink('shopping-list')">Shopping list</a>
       </li>
     </ul>
+  </div>
+  <div class="navbar-nav">
+
+    <button type="button" class="nav-item bg bg-light" (click)="onChangeLink('cart')">
+      Shipping Cart
+      <span *appUnless="!hasCartItems" class="header-shipping-cart">
+        <fa-icon [icon]="icons.faFlag"></fa-icon>
+      </span>
+      <fa-icon [icon]="icons.faCartPlus"></fa-icon>
+    </button>
   </div>
 </nav>

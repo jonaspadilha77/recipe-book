@@ -29,6 +29,7 @@ import { IngredientTypeDirective } from './directives/ingredient-type.directive'
 import { CartComponent } from './cart/cart.component';
 import { SharedModule } from './shared/shared.module';
 import { BoughtIngredientsPipe } from './pipes/bought-ingredients.pipe';
+import { StepsComponent } from './steps/steps.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { BoughtIngredientsPipe } from './pipes/bought-ingredients.pipe';
     FilterPipe,
     IngredientTypeDirective,
     CartComponent,
-    BoughtIngredientsPipe
+    BoughtIngredientsPipe,
+    StepsComponent
   ],
   imports: [
     BrowserModule,

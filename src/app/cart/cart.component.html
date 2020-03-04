@@ -1,15 +1,33 @@
+<app-steps></app-steps>
+<ng-template #cart>
+  <ul class="list-group col py-3 px-lg-5">
+    <li class="list-group-item d-inline-flex " *ngFor="let ingredient of currentList; index as id">
+      <span class="flex-grow-1 ">
+        {{ ingredient.name }}
+      </span>
+      <span class="mr-4">
+        {{ ingredient.amount | PriceNumber }}
+      </span>
+      <span class="p-1 mr-2" [appIngredientType]="ingredient.type">
+        {{ ingredient.type }}
+      </span>
+      <span class="btn btn-danger mr-2" (click)="removeFromCart(id)">Remove</span>
+    </li>
+  </ul>
+  <div class="row">
+    <div class="col py-3 px-lg-5">
+      <button class="btn btn-primary btn-large float-right">Buy</button>
+    </div>
+  </div>
+</ng-template>
 
-       <ul class="list-group col py-3 px-lg-5">
-           <li class="list-group-item d-inline-flex " *ngFor="let ingredient of currentList; index as id">
-            <span class="flex-grow-1 ">
-                {{ ingredient.name }}
-               </span>
-               <span class="mr-4">
-                   {{ ingredient.amount | PriceNumber }}
-               </span>
-               <span class="p-1 mr-2" [appIngredientType]="ingredient.type">
-                {{ ingredient.type }}
-                </span>
-                <span class="btn btn-danger mr-2" (click)="removeFromCart(id)">Remove</span>
-           </li>
-       </ul>
+<ng-template #emptyCart>
+  <div class="mx-auto empty-cart">
+    <img src="https://cdn.dribbble.com/users/204955/screenshots/4930541/emptycart.png" class="img-fluid" alt="">
+    <h3>Your cart is empty</h3>
+  </div>
+</ng-template>
+
+<ng-container
+*ngTemplateOutlet="currentList.length ? cart : emptyCart">
+</ng-container>

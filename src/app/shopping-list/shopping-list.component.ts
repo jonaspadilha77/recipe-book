@@ -24,7 +24,9 @@ export class ShoppingListComponent implements OnInit {
     this.ingredientList.push(newIgredient);
   }
 
-  sendToCart(ingredient: Ingredient) {
+  sendToCart(ingredient: Ingredient, index) {
+    ingredient.added = true;
+    this.ingredientList[index] = ingredient;
     this.cartService.items.push(ingredient);
   }
 }

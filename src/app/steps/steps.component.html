@@ -1,0 +1,15 @@
+<div class="container mt-3 col-md-12">
+  <div class="stepwizard mx-auto ">
+    <div class="stepwizard-row setup-panel">
+      <div class="stepwizard-step">
+        <a href="#step-1" type="button" class="btn btn-circle" disabled="disabled" [ngClass]="{'btn-success': cart.items.length, 'btn-secondary': !cart.items.length }">1</a>
+        <p>Add to Cart</p>
+      </div>
+      <div class="stepwizard-step">
+        <a href="#step-2" type="button" class="btn btn-circle" disabled="disabled" [ngClass]="{'btn-success': cart.closed, 'btn-secondary': !cart.closed }">2</a>
+        <p>Buy</p>
+      </div>
+    </div>
+  </div>
+</div>
+

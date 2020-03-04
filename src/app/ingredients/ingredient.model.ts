@@ -4,7 +4,8 @@ export class Ingredient {
         public name: string,
         public amount: number,
         public type?: string,
-        public bought?: boolean
+        public bought?: boolean,
+        public added?: boolean
     ) {
     }
 }

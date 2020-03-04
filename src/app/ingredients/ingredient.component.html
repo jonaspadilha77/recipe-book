@@ -11,6 +11,9 @@
          {{ ingredient.type }}
          </span>
          <span *ngIf="!ingredient">werwerwer</span>
-         <span class="btn btn-success mr-2" (click)="registerOnClick(ingredient)">Add to Cart</span>
+         <span [ngClass]="{
+            'btn-success': !ingredient.added,
+            'btn-secondary': ingredient.added
+         }"class="btn mr-2" (click)="!ingredient.added && registerOnClick(ingredient)">Add to Cart</span>
     </li>
 </ul>

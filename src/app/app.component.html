@@ -4,7 +4,9 @@
         <div class="col-md-12">
             <app-recipes *ngIf="activeView === 'recipes'"></app-recipes>
             <app-shopping-list *ngIf="activeView === 'shopping-list'" (sentToCart)="ingredientListToCart = $event"></app-shopping-list>
+            <app-cart *ngIf="activeView === 'cart'"></app-cart>
         </div>
     </div>
 </div>
+
 

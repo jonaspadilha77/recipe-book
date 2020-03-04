@@ -1,5 +1,1 @@
-<div class="row">
-  <div class="col-xs-12">
-    <app-recipe-item *ngFor="let recipe of recipes" [recipe]="recipe" (click)="openDetails(recipe)"></app-recipe-item>
-  </div>
-</div>
+<app-recipe-item *ngFor="let recipe of recipes" [recipe]="recipe" (click)="openDetails(recipe)"></app-recipe-item>
