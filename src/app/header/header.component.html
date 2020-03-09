@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#" (click)="onChangeLink('recipes')">Recipes Book</a>
   <button (click)="collapsed = !collapsed" class="navbar-toggler" >
     <span class="navbar-toggler-icon"></span>
@@ -15,7 +15,9 @@
     </ul>
   </div>
   <div class="navbar-nav">
-
+    <span class="nav-item" [class.active]="setActiveLink('my-products')">
+      <a class="nav-link" href="#" (click)="onChangeLink('my-products')">My Products</a>
+    </span>
     <button type="button" class="nav-item bg bg-light" (click)="onChangeLink('cart')">
       Shipping Cart
       <span *appUnless="!hasCartItems" class="header-shipping-cart">

@@ -8,14 +8,23 @@
     </div>
   </div>
 </div>
-<app-dropdown title="Manage Recipe" [options]="optionsMenu"></app-dropdown>
 <div class="row">
   <div class="col-xs-12">
     {{ recipe.description }}
   </div>
 </div>
+<div class="mt-4 row">
+  <app-dropdown title="Manage Recipe" [options]="optionsMenu" (valueSelected)="optionSelected = $event"></app-dropdown>
+</div>
 <div class="row">
-  <div class="col-xs-12">
-    Ingredients
+  <ul class="mt-4 col list-group">
+    <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+      {{ ingredient.name }}
+    </li>
+  </ul>
+</div>
+<div class="row mt-2">
+  <div class="col">
+    <button type="button" class="btn btn-primary btn-large float-right" *ngIf="optionSelected" (click)="onAction()">Save</button>
   </div>
 </div>

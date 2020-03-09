@@ -1,7 +1,11 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterViewChecked,
+} from '@angular/core';
 import { Ingredient } from 'src/app/ingredients/ingredient.model';
-import { mockIngredientes } from 'src/app/ingredients/mock-ingredients';
 import { CartService } from '../cart/cart.service';
+import { ShoppingListService } from './shopping-list.service';
 
 
 @Component({
@@ -9,15 +13,21 @@ import { CartService } from '../cart/cart.service';
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.css']
 })
-export class ShoppingListComponent implements OnInit {
-
+export class ShoppingListComponent implements OnInit, AfterViewChecked {
   ingredientList: Ingredient[];
   filtered: string;
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private shoppingListService: ShoppingListService) { }
 
   ngOnInit() {
-    this.ingredientList = mockIngredientes.map(item => new Ingredient(item.name, item.amount, item.type));
+
+    this.ingredientList = this.shoppingListService.getIngredients();
+
+
+    this.shoppingListService.ingredientsChanged.subscribe(
+      (ingredients: Ingredient[]) => {
+        this.ingredientList = ingredients;
+      });
   }
 
   onNewIngredient(newIgredient: Ingredient) {
@@ -25,8 +35,13 @@ export class ShoppingListComponent implements OnInit {
   }
 
   sendToCart(ingredient: Ingredient, index) {
-    ingredient.added = true;
     this.ingredientList[index] = ingredient;
     this.cartService.items.push(ingredient);
   }
+
+  ngAfterViewChecked() {
+  }
 }
+
+
+

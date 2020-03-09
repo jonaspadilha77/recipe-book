@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy, AfterViewChecked } from '@angular/core';
 import { Ingredient } from './ingredient.model';
 
 @Component({
@@ -6,7 +6,7 @@ import { Ingredient } from './ingredient.model';
   templateUrl: './ingredient.component.html',
   styleUrls: ['./ingredient.component.css']
 })
-export class IngredientComponent implements OnInit {
+export class IngredientComponent implements OnInit, AfterViewChecked {
 
   @Input() ingredientList: Ingredient[];
   @Output() itemClicked = new EventEmitter<Ingredient>();
@@ -16,6 +16,14 @@ export class IngredientComponent implements OnInit {
 
   registerOnClick(ingredient: Ingredient) {
     this.itemClicked.emit(ingredient);
+  }
+
+  ngAfterViewChecked() {
+    if (this.filtered && !this.ingredientList.length) {
+      setTimeout(() => {
+        alert('asdjasdasd');
+      }, 800);
+    }
   }
 
 }

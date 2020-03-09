@@ -1,7 +1,8 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, EventEmitter, Output } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Pipe({
-  name: 'filter'
+  name: 'filter',
 })
 export class FilterPipe implements PipeTransform {
 
@@ -10,15 +11,14 @@ export class FilterPipe implements PipeTransform {
       return value;
     }
 
-
     const result = [];
 
     for (const item of value) {
       if (item[prop] && item[prop].toLowerCase().trim() === (filterString.toLowerCase().trim())) {
-        console.log(filterString);
         result.push(item);
       }
     }
+
     return result;
 
   }

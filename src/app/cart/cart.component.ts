@@ -22,7 +22,6 @@ export class CartComponent implements OnInit, OnChanges {
     this.currentList = this.cartService.items;
   }
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
   }
 
 

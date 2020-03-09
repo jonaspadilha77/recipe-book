@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit, DoCheck {
     }
     ngDoCheck() {
         this.hasCartItems = !!this.cartService.items.length;
-        console.log(this.cartService);
     }
 
     onChangeLink(route: string) {

@@ -9,5 +9,6 @@
           <p class="card-text">{{ recipe.description }}</p>
         </div>
       </div>
+      <app-dropdown title="Ingredients" [options]="recipe.ingredients.map" (valueSelected)="ingredientTypeValue = $event"></app-dropdown>
     </div>
   </a>

@@ -1,4 +1,4 @@
-<ul class="list-group col py-3 px-lg-5">
+<ul class="list-group col py-3 px-lg-5" #ingredientTemplate >
     <li class="list-group-item d-inline-flex " *ngFor="let ingredient of ingredientList | filter:filtered:'name'" >
 
         <span class="flex-grow-1 ">
@@ -11,9 +11,6 @@
          {{ ingredient.type }}
          </span>
          <span *ngIf="!ingredient">werwerwer</span>
-         <span [ngClass]="{
-            'btn-success': !ingredient.added,
-            'btn-secondary': ingredient.added
-         }"class="btn mr-2" (click)="!ingredient.added && registerOnClick(ingredient)">Add to Cart</span>
+         <span class="btn btn-primary mr-2" (click)="!ingredient.added && registerOnClick(ingredient)">Add to Cart</span>
     </li>
 </ul>

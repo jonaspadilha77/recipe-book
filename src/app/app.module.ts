@@ -30,7 +30,7 @@ import { CartComponent } from './cart/cart.component';
 import { SharedModule } from './shared/shared.module';
 import { BoughtIngredientsPipe } from './pipes/bought-ingredients.pipe';
 import { StepsComponent } from './steps/steps.component';
-
+import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 @NgModule({
   declarations: [
@@ -67,7 +67,7 @@ import { StepsComponent } from './steps/steps.component';
     SharedModule.forRoot(),
     FontAwesomeModule,
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

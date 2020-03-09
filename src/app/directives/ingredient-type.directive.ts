@@ -11,7 +11,7 @@ import {
 @Directive({
   selector: '[appIngredientType]'
 })
-export class IngredientTypeDirective implements AfterViewChecked, AfterViewInit {
+export class IngredientTypeDirective implements AfterViewChecked {
 
   @Input('appIngredientType') type: string;
 
@@ -19,9 +19,6 @@ export class IngredientTypeDirective implements AfterViewChecked, AfterViewInit 
     renderer.addClass(hostElement.nativeElement, 'ingredient-type');
   }
 
-  ngAfterViewInit() {
-
-  }
 
   ngAfterViewChecked() {
     const addClass = 'ingredient-type-' + this.type.toString().toLowerCase();
